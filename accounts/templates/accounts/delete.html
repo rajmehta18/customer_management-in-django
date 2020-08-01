@@ -1,0 +1,13 @@
+{% extends 'accounts/main.html' %}
+<!---->
+{%load static %} {% block content %}
+<p>Do you really want to delete this {{order}}</p>
+
+<form method="POST" action="#">
+  {% csrf_token %}
+  <br />
+  <a href="{% url 'home' %}" class="btn btn-warning">No</a>
+
+  <input type="submit" class="btn btn-danger" name="Confirm" />
+</form>
+{% endblock %}
